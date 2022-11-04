@@ -9,6 +9,7 @@ function showArgs(){
 
     //Etape 2 : On boucle en commençant par l'index 2 car pas besoin des 2 premiers arguments (node + filePath)
     for (let i = 2; i < args.length; i++) {
+        //Etape 3 : on affiche à chaque fois l'argument passé par le user dans le terminal
         console.log(args[i]);
     }
 }
