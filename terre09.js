@@ -17,6 +17,11 @@ function racineCarre() {
         return
     }
 
+    if (arg1 < 2) {
+        console.log("Entrer un nombre supérieur à 2.")
+        return
+    }
+
     if (process.argv[3] !== undefined) {
         console.log("Merci de n'entrer qu'un seul argument")
         return
@@ -24,27 +29,14 @@ function racineCarre() {
 
     //-------------TEST DONE----------//
 
-    let racine = arg1
-    let step = 1
-
-    for (let i = 0; i < arg1; i++) {
-
-        racine = racine - step
-        step +=2
-
-        // racine = racine / 2
-        // if ((racine - Math.floor(racine)) !== 0) {
-        //     //decimal number
-        //     console.log(racine)
-        //     return
-        // } else {
-        //     //nb entier
-        //     console.log("entier");
-        // }
-        
-
-    }
-
+   //--------TRAITEMENT---------//
+   let i = 0, y=arg1;
+   while(i <= y) {
+        let mid = Math.floor((i + y) / 2);
+        if(mid * mid > arg1) y = mid - 1;
+        else i = mid + 1;
+   }
+   console.log(y);
 }
 
 racineCarre()
