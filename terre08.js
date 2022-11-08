@@ -15,17 +15,25 @@ Attention : je compte sur vous pour gérer les potentielles erreurs d’argument
 function puissanceNb(){
     let arg1 =process.argv[2]
     let arg2 =process.argv[3]
+    let result = arg1
 
-    if (process.argv[4] !== undefined || Math.sign(arg2) !== 1) {
-        if (isNaN(arg2) || isNaN(arg1)) {
-            console.log("erreur.")
-            return
-        } else {
-            console.log(Math.pow(arg1, arg2))
-        }
-    } else {
-        console.log("erreur.");
+    //--------TEST----------//
+    if (isNaN(arg1) || isNaN(arg2) || Math.sign(arg2) !== 1) {
+        console.log("Merci d'entrer un nombre entier positif")
+        return
     }
+
+    if (process.argv[4] !== undefined) {
+        console.log("Merci de n'entrer que deux arguments")
+        return
+    }
+    //-----TEST DONE----//
+
+    //---Traitement---//
+    for (let i = 1; i < arg2 ; i++) {
+        result = result * arg1
+    }
+    console.log(result)
 }
 
 puissanceNb()
