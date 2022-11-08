@@ -36,6 +36,7 @@ function racineCarre() {
         if(mid * mid > arg1) y = mid - 1;
         else i = mid + 1;
    }
+   
    console.log(y);
 }
 
